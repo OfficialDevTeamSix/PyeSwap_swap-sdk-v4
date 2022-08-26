@@ -4,8 +4,10 @@ import JSBI from 'jsbi'
 export type BigintIsh = JSBI | bigint | string
 
 export enum ChainId {
-  MAINNET = 56,
-  TESTNET = 97
+  BSC = 56,
+  BSCTEST = 97,
+  ETH = 1,
+  ETHTEST = 4
 }
 
 export enum TradeType {
@@ -23,13 +25,17 @@ type ChainAddress = {
   [chainId in ChainId]: string
 }
 export const FACTORY_ADDRESS: ChainAddress = {
-  [ChainId.MAINNET]: "0xb664BDCe35b5EE182e8832d4F3b615232e98a51E",
-  [ChainId.TESTNET]: "0xb664BDCe35b5EE182e8832d4F3b615232e98a51E"
+  [ChainId.BSC]: "0xb664BDCe35b5EE182e8832d4F3b615232e98a51E",
+  [ChainId.BSCTEST]: "0xb664BDCe35b5EE182e8832d4F3b615232e98a51E",
+  [ChainId.ETH]: "0xA2F8f1FAb81300c48208dc0aE540c6675d19f4cd",
+  [ChainId.ETHTEST]: "0xA2F8f1FAb81300c48208dc0aE540c6675d19f4cd"
 }
 
 export const INIT_CODE_HASH: ChainAddress = {
-  [ChainId.MAINNET]: "0xaa9188e47cd8f086736d7ff3726822f9599d18f5e5df39788dc169ef27ecd593",
-  [ChainId.TESTNET]: '0xaa9188e47cd8f086736d7ff3726822f9599d18f5e5df39788dc169ef27ecd593'
+  [ChainId.BSC]: "0xaa9188e47cd8f086736d7ff3726822f9599d18f5e5df39788dc169ef27ecd593",
+  [ChainId.BSCTEST]: '0xaa9188e47cd8f086736d7ff3726822f9599d18f5e5df39788dc169ef27ecd593',
+  [ChainId.ETH]: "0x7322d196a5476ed6b44fc18910ef3e8a09c2baea2da66bd2cf58f5b3c9dc57ce",
+  [ChainId.ETHTEST]: '0x7322d196a5476ed6b44fc18910ef3e8a09c2baea2da66bd2cf58f5b3c9dc57ce'
 }
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)

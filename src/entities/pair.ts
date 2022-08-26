@@ -31,7 +31,7 @@ export class Pair {
   public readonly totalFee: JSBI
   private readonly tokenAmounts: [TokenAmount, TokenAmount]
 
-  public static getAddress(tokenA: Token, tokenB: Token, chainId: ChainId = ChainId.TESTNET): string {
+  public static getAddress(tokenA: Token, tokenB: Token, chainId: ChainId = ChainId.MAINNET): string {
     const tokens = tokenA.sortsBefore(tokenB) ? [tokenA, tokenB] : [tokenB, tokenA] // does safety checks
 
     if (PAIR_ADDRESS_CACHE?.[tokens[0].address]?.[tokens[1].address] === undefined) {
